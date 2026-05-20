@@ -1,0 +1,5 @@
+Aggiungi il nuovo argomento (percorso/nuovo/argomento):
+
+1. Crea docs/nuovo-argomento/index.md
+2. Aggiungi la voce in nav dentro mkdocs.yml
+3. Fai mkdocs gh-deploy per pubblicare
