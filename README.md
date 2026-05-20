@@ -7,5 +7,5 @@ Per ora la quotidianità mi rende impossibile tale obiettivo ma mi impegno a man
 <details>
  <summary>Goldrake cosa ne pensavano gli "adulti"...</summary>
 
-[Robot killer - goldrake](/goldrake/report.md)
+[Robokiller - goldrake](/goldrake/report.md)
 </details>
