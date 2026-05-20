@@ -1,0 +1,311 @@
+[data-md-color-scheme="nocturne-scholastic"] {
+  --md-hue: 250;
+
+  /* Background */
+  --md-default-bg-color: #13131b;
+  --md-default-bg-color--light: hsla(250, 17%, 9%, 0.54);
+  --md-default-bg-color--lighter: hsla(250, 17%, 9%, 0.26);
+  --md-default-bg-color--lightest: hsla(250, 17%, 9%, 0.07);
+
+  /* Text */
+  --md-default-fg-color: #e4e1ed;
+  --md-default-fg-color--light: hsla(252, 25%, 91%, 0.62);
+  --md-default-fg-color--lighter: hsla(252, 25%, 91%, 0.32);
+  --md-default-fg-color--lightest: hsla(252, 25%, 91%, 0.12);
+
+  /* Primary — indaco chiaro #c0c1ff */
+  --md-primary-fg-color: #c0c1ff;
+  --md-primary-fg-color--light: #dcddff;
+  --md-primary-fg-color--dark: #8083ff;
+  --md-primary-bg-color: #1000a9;
+  --md-primary-bg-color--light: hsla(245, 100%, 53%, 0.54);
+
+  /* Accent — violetto #ddb7ff */
+  --md-accent-fg-color: #ddb7ff;
+  --md-accent-fg-color--light: hsla(278, 100%, 55%, 0.54);
+  --md-accent-fg-color--trans: hsla(278, 100%, 86%, 0.08);
+
+  /* Code */
+  --md-code-bg-color: #1b1b23;
+  --md-code-fg-color: #c7c4d7;
+
+  /* Typeset */
+  --md-typeset-color: #e4e1ed;
+  --md-typeset-a-color: #c0c1ff;
+
+  /* Header */
+  --md-header-bg-color: #1b1b23;
+
+  /* Footer */
+  --md-footer-bg-color: #0d0d15;
+  --md-footer-bg-color--dark: #000000;
+
+  /* Admonition */
+  --md-admonition-bg-color: #1f1f27;
+  --md-admonition-fg-color: #e4e1ed;
+
+  /* Border radius — Nocturne Scholastic specs */
+  --md-border-radius: 0.5rem;
+
+  /* TOC */
+  --md-tabs-bg-color: #1b1b23;
+}
+
+/* Light scheme — invertita mantenendo la palette Nocturne Scholastic */
+[data-md-color-scheme="nocturne-scholastic-light"] {
+  --md-hue: 250;
+
+  --md-default-bg-color: #f5f5fa;
+  --md-default-bg-color--light: hsla(250, 25%, 97%, 0.54);
+  --md-default-bg-color--lighter: hsla(250, 25%, 97%, 0.26);
+  --md-default-bg-color--lightest: hsla(250, 25%, 97%, 0.07);
+
+  --md-default-fg-color: #1b1b23;
+  --md-default-fg-color--light: hsla(250, 15%, 12%, 0.6);
+  --md-default-fg-color--lighter: hsla(250, 15%, 12%, 0.3);
+  --md-default-fg-color--lightest: hsla(250, 15%, 12%, 0.12);
+
+  --md-primary-fg-color: #494bd6;
+  --md-primary-fg-color--light: #8083ff;
+  --md-primary-fg-color--dark: #2f2ebe;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.54);
+
+  --md-accent-fg-color: #6900b3;
+  --md-accent-fg-color--light: hsla(278, 100%, 35%, 0.54);
+  --md-accent-fg-color--trans: hsla(278, 100%, 35%, 0.08);
+
+  --md-code-bg-color: #eeeeee;
+  --md-code-fg-color: #1b1b23;
+
+  --md-typeset-color: #1b1b23;
+  --md-typeset-a-color: #494bd6;
+
+  --md-header-bg-color: #ffffff;
+
+  --md-footer-bg-color: #e4e1ed;
+  --md-footer-bg-color--dark: #c7c4d7;
+
+  --md-admonition-bg-color: #ffffff;
+  --md-admonition-fg-color: #1b1b23;
+
+  --md-tabs-bg-color: #ffffff;
+}
+
+/* Nocturne Scholastic shapes — Medium-Soft */
+.md-main {
+  border-radius: 1rem;
+}
+
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Card-style containers */
+.md-content {
+  --md-surface: #1f1f27;
+}
+
+[data-md-color-scheme="nocturne-scholastic"] .md-content__inner {
+  background: #1f1f27;
+  border: 1px solid #34343d;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  margin-top: 0.8rem;
+}
+
+/* Navigation tabs */
+[data-md-color-scheme="nocturne-scholastic"] .md-tabs {
+  background: #1b1b23;
+  border-bottom: 1px solid #34343d;
+}
+
+/* Header */
+[data-md-color-scheme="nocturne-scholastic"] .md-header {
+  background: #1b1b23;
+  box-shadow: none;
+  border-bottom: 1px solid #34343d;
+}
+
+/* Footer */
+[data-md-color-scheme="nocturne-scholastic"] .md-footer {
+  border-top: 1px solid #34343d;
+}
+
+/* Sidebar */
+[data-md-color-scheme="nocturne-scholastic"] .md-sidebar {
+  background: #13131b;
+}
+
+/* Code blocks — JetBrains Mono */
+.md-typeset code {
+  font-family: "JetBrains Mono", var(--md-code-font-family);
+  font-size: 0.85em;
+}
+
+/* Admonitions — subtle border instead of heavy left bar */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid #34343d;
+  border-radius: 0.5rem;
+  box-shadow: none;
+}
+
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary {
+  border-bottom: 1px solid #34343d;
+}
+
+/* Grid cards on homepage */
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid #34343d;
+  border-radius: 0.75rem;
+  background: #1f1f27;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: #475569;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Tables */
+.md-typeset table:not([class]) {
+  border: 1px solid #34343d;
+  border-radius: 0.5rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: #292932;
+}
+
+/* Search results */
+[data-md-color-scheme="nocturne-scholastic"] .md-search-result {
+  background: #1f1f27;
+}
+
+/* TOC (table of contents) */
+[data-md-color-scheme="nocturne-scholastic"] .md-nav--secondary {
+  border-left: 1px solid #34343d;
+}
+
+/* Links in navigation */
+[data-md-color-scheme="nocturne-scholastic"] .md-nav__link:hover {
+  color: #c0c1ff;
+}
+
+/* Active nav item */
+[data-md-color-scheme="nocturne-scholastic"] .md-nav__item--active > .md-nav__link {
+  color: #c0c1ff;
+  font-weight: 600;
+}
+
+/* Spacing — respecting 8px rule */
+.md-content__inner {
+  --md-spacing: 8px;
+}
+
+.md-content__inner > * {
+  margin-bottom: 1.25rem;
+}
+
+/* Inline code background */
+.md-typeset code {
+  background: #292932;
+  border: 1px solid #34343d;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.3rem;
+}
+
+/* Blockquotes */
+.md-typeset blockquote {
+  border-left: 3px solid #c0c1ff;
+  color: #c7c4d7;
+}
+
+/* --- Buttons with Indigo→Violet gradient --- */
+
+/* Dark scheme buttons */
+[data-md-color-scheme="nocturne-scholastic"] .md-typeset .md-button--primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #8083ff 0%, #ddb7ff 100%);
+  border: none;
+  transition: filter 0.2s, box-shadow 0.2s;
+}
+
+[data-md-color-scheme="nocturne-scholastic"] .md-typeset .md-button--primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 20px rgba(192, 193, 255, 0.3);
+}
+
+/* Default .md-button in dark — outline style with gradient border */
+[data-md-color-scheme="nocturne-scholastic"] .md-typeset .md-button {
+  border: 1.5px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+[data-md-color-scheme="nocturne-scholastic"] .md-typeset .md-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #8083ff, #ddb7ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+[data-md-color-scheme="nocturne-scholastic"] .md-typeset .md-button:hover {
+  background: rgba(192, 193, 255, 0.08);
+}
+
+/* Light scheme buttons */
+[data-md-color-scheme="nocturne-scholastic-light"] .md-typeset .md-button--primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #494bd6 0%, #6900b3 100%);
+  border: none;
+  transition: filter 0.2s, box-shadow 0.2s;
+}
+
+[data-md-color-scheme="nocturne-scholastic-light"] .md-typeset .md-button--primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 20px rgba(73, 75, 214, 0.25);
+}
+
+[data-md-color-scheme="nocturne-scholastic-light"] .md-typeset .md-button {
+  border: 1.5px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+[data-md-color-scheme="nocturne-scholastic-light"] .md-typeset .md-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #494bd6, #6900b3);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+[data-md-color-scheme="nocturne-scholastic-light"] .md-typeset .md-button:hover {
+  background: rgba(73, 75, 214, 0.08);
+}
+
+/* Shared button shape */
+.md-typeset .md-button {
+  border-radius: 0.5rem;
+  font-weight: 500;
+}

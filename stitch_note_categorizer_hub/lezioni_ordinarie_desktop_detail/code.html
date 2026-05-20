@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nocturne - Lezioni ordinarie</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#ffb783",
+                    "tertiary-fixed": "#ffdcc5",
+                    "secondary-container": "#6f00be",
+                    "surface-dim": "#13131b",
+                    "on-primary": "#1000a9",
+                    "primary-fixed": "#e1e0ff",
+                    "on-tertiary-fixed": "#301400",
+                    "on-primary-container": "#0d0096",
+                    "on-background": "#e4e1ed",
+                    "tertiary-fixed-dim": "#ffb783",
+                    "surface-container-highest": "#34343d",
+                    "secondary-fixed": "#f0dbff",
+                    "outline": "#908fa0",
+                    "on-tertiary": "#4f2500",
+                    "surface-container-high": "#292932",
+                    "error-container": "#93000a",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "surface-tint": "#c0c1ff",
+                    "error": "#ffb4ab",
+                    "primary-container": "#8083ff",
+                    "on-primary-fixed": "#07006c",
+                    "inverse-surface": "#e4e1ed",
+                    "surface-container-low": "#1b1b23",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "surface-container-lowest": "#0d0d15",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#303038",
+                    "surface": "#13131b",
+                    "outline-variant": "#464554",
+                    "on-secondary": "#490080",
+                    "primary": "#c0c1ff",
+                    "on-tertiary-container": "#452000",
+                    "tertiary-container": "#d97721",
+                    "on-tertiary-fixed-variant": "#703700",
+                    "on-surface-variant": "#c7c4d7",
+                    "on-secondary-fixed-variant": "#6900b3",
+                    "secondary": "#ddb7ff",
+                    "surface-bright": "#393841",
+                    "background": "#13131b",
+                    "on-surface": "#e4e1ed",
+                    "on-secondary-container": "#d6a9ff",
+                    "inverse-primary": "#494bd6",
+                    "surface-variant": "#34343d",
+                    "secondary-fixed-dim": "#ddb7ff",
+                    "on-secondary-fixed": "#2c0051",
+                    "on-error-container": "#ffdad6",
+                    "surface-container": "#1f1f27"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "lg": "40px",
+                    "xl": "64px",
+                    "gutter": "24px",
+                    "max-width-content": "1200px",
+                    "margin-mobile": "16px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "title-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "code-mono": ["JetBrains Mono"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "code-mono": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0f172a;
+            color: #e4e1ed;
+        }
+        .custom-glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+        .indigo-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container dark:bg-surface-container border-r border-outline-variant dark:border-outline-variant shadow-sm flex flex-col py-base z-50">
+<div class="px-gutter mb-xl">
+<h1 class="font-display-lg text-display-lg font-bold text-primary dark:text-primary mb-1">Nocturne</h1>
+<p class="text-on-surface-variant font-label-sm uppercase tracking-widest">Academic Ledger</p>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="px-sm mb-base">
+<button class="w-full flex items-center justify-center gap-2 indigo-gradient text-white py-3 rounded-xl font-bold transition-all hover:shadow-lg hover:shadow-primary/20 active:scale-95">
+<span class="material-symbols-outlined">add</span>
+                    New Note
+                </button>
+</div>
+<a class="flex items-center gap-gutter px-gutter py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">library_books</span>
+<span class="font-body-md">Library</span>
+</a>
+<a class="flex items-center gap-gutter px-gutter py-3 text-primary font-bold border-r-4 border-primary bg-surface-container-high transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-body-md">Categories</span>
+</a>
+<a class="flex items-center gap-gutter px-gutter py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">history</span>
+<span class="font-body-md">History</span>
+</a>
+<a class="flex items-center gap-gutter px-gutter py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">bookmark</span>
+<span class="font-body-md">Bookmarks</span>
+</a>
+<a class="flex items-center gap-gutter px-gutter py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</nav>
+<footer class="mt-auto pt-base border-t border-outline-variant">
+<a class="flex items-center gap-gutter px-gutter py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">help</span>
+<span class="font-body-md">Help</span>
+</a>
+<a class="flex items-center gap-gutter px-gutter py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">logout</span>
+<span class="font-body-md">Logout</span>
+</a>
+<div class="px-gutter py-md flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQIpO_quUQ1QxSvMCGllCQ59ySVviJc1Lbf_m985iKfsuSewtsox5PZc_iGB8fMk-eE6FteOxxbmMKnF1RqmxbW40tBx0Rz3V1E4w98E80pOh_NZs3HWDhKQLc7WsxXObGKATJt56o1jm5JB7hUz3jqD9Gvvtn5TXbjUJoB6xYdWq8jXqKjn72EAkglectGKmsCtvBTgJKT7odKUYMBgFekZ7-EURU0e-FFtuIFQR7optALFubIEadNRd5U6n3Je9bcSMLGEaKM_lq"/>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface text-sm">Prof. Ricci</span>
+<span class="text-xs text-on-surface-variant">Admin Access</span>
+</div>
+</div>
+</footer>
+</aside>
+<!-- Main Content Shell -->
+<main class="ml-64 h-screen flex flex-col bg-surface-dim overflow-y-auto scrollbar-hide">
+<!-- TopNavBar (Shared Component) -->
+<header class="sticky top-0 z-40 bg-surface dark:bg-surface border-b border-outline-variant h-16 flex justify-between items-center px-gutter shrink-0">
+<div class="flex items-center gap-4">
+<nav class="flex items-center text-label-sm text-on-surface-variant gap-2">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Lezioni ordinarie</span>
+</nav>
+</div>
+<div class="flex-1 max-w-xl mx-xl">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg pl-10 text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-all" placeholder="Search in Lezioni ordinarie..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-base">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-all active:scale-90 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<div class="flex items-center gap-base px-2 py-1 rounded-full hover:bg-surface-container-high cursor-pointer transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+<span class="font-title-md text-sm">Ricci.edu</span>
+</div>
+</div>
+</header>
+<!-- Category Header -->
+<section class="px-xl pt-xl pb-md">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs tracking-tight">Lezioni ordinarie</h2>
+<div class="flex items-center gap-4">
+<p class="text-on-surface-variant font-body-lg">12 documenti caricati</p>
+<span class="h-1.5 w-1.5 rounded-full bg-primary/40"></span>
+<p class="text-primary font-label-sm">ULTIMO AGGIORNAMENTO: OGGI, 10:45</p>
+</div>
+</div>
+<div class="flex gap-base">
+<button class="flex items-center gap-2 px-6 py-3 border border-outline-variant text-on-surface font-semibold rounded-xl hover:bg-surface-container-high transition-all active:scale-95">
+<span class="material-symbols-outlined">sort</span>
+                        Filtra
+                    </button>
+<button class="flex items-center gap-2 px-8 py-3 indigo-gradient text-white font-bold rounded-xl shadow-lg shadow-primary/30 transition-all hover:brightness-110 active:scale-95">
+<span class="material-symbols-outlined">upload_file</span>
+                        Carica Nuova Nota
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Content Grid -->
+<section class="px-xl pb-xl grid grid-cols-12 gap-gutter">
+<!-- Featured Card (Asymmetric Layout) -->
+<div class="col-span-8 group cursor-pointer">
+<div class="h-full custom-glass rounded-xl p-md overflow-hidden relative flex flex-col justify-between border-primary/20 hover:border-primary/50 transition-all duration-300">
+<div class="absolute -right-12 -top-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all"></div>
+<div class="flex justify-between items-start relative z-10">
+<div class="p-3 bg-primary-container text-on-primary-container rounded-lg shadow-inner">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container-highest/50 rounded-lg hover:text-primary transition-colors"><span class="material-symbols-outlined">share</span></button>
+<button class="p-2 bg-surface-container-highest/50 rounded-lg hover:text-primary transition-colors"><span class="material-symbols-outlined">download</span></button>
+</div>
+</div>
+<div class="mt-xl relative z-10">
+<span class="inline-block px-3 py-1 bg-secondary-container/20 text-secondary text-[11px] font-bold uppercase tracking-widest rounded-full mb-4">In primo piano</span>
+<h3 class="font-headline-lg text-on-surface mb-2">Sistemi di Diritto Comparato - Modulo 1</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2 max-w-lg mb-4">Analisi approfondita delle radici storiche dei sistemi di Common Law e Civil Law con focus sulla giurisprudenza contemporanea...</p>
+<div class="flex items-center gap-4 text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">calendar_today</span> 14 Ott 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">visibility</span> 1.2k visualizzazioni</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Card -->
+<div class="col-span-4 h-full custom-glass rounded-xl p-md flex flex-col justify-center gap-gutter border-outline-variant/30">
+<div class="text-center">
+<p class="text-on-surface-variant font-label-sm uppercase mb-1">Spazio occupato</p>
+<p class="text-headline-lg font-bold text-on-surface">45.8 <span class="text-title-md font-normal opacity-50">MB</span></p>
+<div class="w-full bg-surface-container-highest h-2 rounded-full mt-4 overflow-hidden">
+<div class="bg-primary h-full w-2/3 shadow-[0_0_8px_rgba(192,193,255,0.5)]"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant/20">
+<p class="text-xs text-on-surface-variant mb-1">PDF</p>
+<p class="font-bold">8 files</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant/20">
+<p class="text-xs text-on-surface-variant mb-1">Markdown</p>
+<p class="font-bold">4 files</p>
+</div>
+</div>
+</div>
+<!-- Standard Cards -->
+<script>
+                const cards = [
+                    { title: "Filosofia del Linguaggio", date: "12 Ott 2023", icon: "menu_book", type: "PDF" },
+                    { title: "Logica Matematica II", date: "10 Ott 2023", icon: "functions", type: "Markdown" },
+                    { title: "Storia Moderna - Appunti", date: "09 Ott 2023", icon: "history_edu", type: "PDF" },
+                    { title: "Diritto Penale: Parte Gen.", date: "05 Ott 2023", icon: "gavel", type: "PDF" },
+                    { title: "Economia Politica", date: "02 Ott 2023", icon: "trending_up", type: "PDF" },
+                    { title: "Sociologia della Cultura", date: "28 Set 2023", icon: "groups", type: "Markdown" }
+                ];
+
+                document.write(cards.map(card => `
+                    <div class="col-span-4 group">
+                        <div class="bg-surface-container border border-outline-variant p-gutter rounded-xl hover:border-primary hover:bg-surface-container-high transition-all duration-300 cursor-pointer shadow-sm">
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-12 h-12 bg-surface-dim rounded-lg flex items-center justify-center text-primary border border-outline-variant group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined">${card.icon}</span>
+                                </div>
+                                <div class="flex opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <button class="p-1 hover:text-primary"><span class="material-symbols-outlined text-[20px]">download</span></button>
+                                    <button class="p-1 hover:text-primary"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+                                </div>
+                            </div>
+                            <h4 class="font-title-md text-on-surface mb-2 truncate">${card.title}</h4>
+                            <div class="flex justify-between items-center">
+                                <span class="text-label-sm text-on-surface-variant uppercase tracking-tighter">${card.date}</span>
+                                <span class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant text-[10px] rounded font-mono font-bold">${card.type}</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join(''));
+            </script>
+<!-- Grid visual flavor/Empty state spacer if needed -->
+<div class="col-span-4 border-2 border-dashed border-outline-variant/20 rounded-xl flex flex-col items-center justify-center py-xl opacity-40 hover:opacity-100 hover:border-primary/40 transition-all cursor-pointer group">
+<span class="material-symbols-outlined text-4xl mb-2 group-hover:scale-125 transition-transform">add_circle</span>
+<p class="font-label-sm">Nuovo Documento</p>
+</div>
+</section>
+<!-- Quick Access Sticky FAB (Only for specific contexts) -->
+<button class="fixed bottom-10 right-10 w-14 h-14 rounded-full indigo-gradient text-white flex items-center justify-center shadow-2xl shadow-primary/40 hover:scale-110 transition-transform active:scale-95 group z-50" id="mainFab">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform">add</span>
+</button>
+</main>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('.custom-glass').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Simple animation on FAB
+        const fab = document.getElementById('mainFab');
+        window.addEventListener('scroll', () => {
+           if (window.scrollY > 200) {
+               fab.classList.add('scale-100');
+               fab.classList.remove('scale-0');
+           } else {
+               // Keep visible on this specific category screen as it's "Home-adjacent"
+           }
+        });
+    </script>
+</body></html>

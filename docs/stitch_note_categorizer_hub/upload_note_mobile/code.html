@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Upload | StudyNotes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface-container-high": "#292932",
+                        "inverse-on-surface": "#303038",
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#e4e1ed",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-background": "#e4e1ed",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "surface-tint": "#c0c1ff",
+                        "on-tertiary-fixed": "#301400",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#ffdcc5",
+                        "on-primary": "#1000a9",
+                        "on-error": "#690005",
+                        "inverse-primary": "#494bd6",
+                        "on-tertiary": "#4f2500",
+                        "on-secondary-container": "#d6a9ff",
+                        "secondary": "#ddb7ff",
+                        "outline-variant": "#464554",
+                        "surface-bright": "#393841",
+                        "on-secondary-fixed": "#2c0051",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "surface-container-highest": "#34343d",
+                        "surface-container-low": "#1b1b23",
+                        "background": "#13131b",
+                        "tertiary": "#ffb783",
+                        "primary": "#c0c1ff",
+                        "on-secondary": "#490080",
+                        "surface": "#13131b",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "on-primary-fixed": "#07006c",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#34343d",
+                        "surface-container-lowest": "#0d0d15",
+                        "surface-container": "#1f1f27",
+                        "tertiary-container": "#d97721",
+                        "on-surface-variant": "#c7c4d7",
+                        "primary-fixed": "#e1e0ff",
+                        "on-tertiary-container": "#452000",
+                        "secondary-container": "#6f00be",
+                        "on-surface": "#e4e1ed",
+                        "secondary-fixed": "#f0dbff",
+                        "surface-dim": "#13131b",
+                        "primary-container": "#8083ff",
+                        "outline": "#908fa0",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-primary-container": "#0d0096"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "lg": "40px",
+                        "base": "8px",
+                        "max-width-content": "1200px",
+                        "margin-mobile": "16px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "code-mono": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "title-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "code-mono": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0f172a; /* Custom base background from level 0 */
+            color: #e4e1ed;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .indigo-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+        .custom-dashed-border {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23475569' stroke-width='2' stroke-dasharray='8%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+            border-radius: 16px;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface-container-low dark:bg-surface-container-low border-b border-outline-variant dark:border-outline-variant shadow-sm flex justify-between items-center px-margin-mobile w-full h-16 sticky top-0 z-[60]">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary dark:text-primary">menu_book</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary">StudyNotes</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline shadow-sm active:scale-95 transition-transform">
+<img alt="Avatar" data-alt="A professional close-up headshot of a student with a clean-cut aesthetic, wearing dark rimmed glasses and a charcoal sweater. The background is a blurred, high-end library with dark wood and soft amber lighting, maintaining a dark academic and intellectual mood. The color palette consists of deep blues, soft grays, and warm gold highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo9O6O-l5-S-b3LrsJGPrHqzP2VzLnEEHhUqpDRVbWfMFYJJRJkhojgrS5HZxpFmcUFjUtD7CRpQ5GQH5Hqy_osQk6Im6ZA-dhN2rYMOI8YjC3CG-dJ9izFAqgFWeONjNQVQcy1ea6emPs1C74vuxBm9vdK04J9nsm1NW-R4kGeL8kBup209e6liFuxlHAwwOq4-OPuSB5ODIeNj_eCPiyP0uDsfF6AFUVOPBRvYy0z5vhZlONuh3UI9d48RGf-lmLscszFUpt5sDK"/>
+</div>
+</header>
+<main class="max-w-max-width-content mx-auto pb-32 pt-8 px-margin-mobile">
+<div class="flex flex-col gap-lg">
+<!-- Page Header -->
+<div class="flex flex-col gap-xs">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface">Nuovo Caricamento</h2>
+<p class="text-on-surface-variant">Arricchisci la tua libreria con nuovi appunti.</p>
+</div>
+<!-- Upload Area Section -->
+<section class="w-full">
+<div class="custom-dashed-border p-xl flex flex-col items-center justify-center gap-md text-center bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group active:scale-[0.98] transition-transform" id="drop-zone">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">upload_file</span>
+</div>
+<div class="flex flex-col gap-xs">
+<p class="font-title-md text-title-md text-on-surface">Drop your notes here</p>
+<p class="text-on-surface-variant font-label-sm text-label-sm">o clicca per sfogliare i file (PDF, MD, JPG)</p>
+</div>
+</div>
+</section>
+<!-- Metadata Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Title & Tags -->
+<div class="md:col-span-7 flex flex-col gap-gutter">
+<!-- Title Input -->
+<div class="bg-surface-container p-md rounded-xl border border-outline-variant shadow-sm flex flex-col gap-sm">
+<label class="text-label-sm font-label-sm text-primary uppercase tracking-wider">Titolo Documento</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-outline" placeholder="Es. Teorema di Stokes e Maxwell" type="text"/>
+</div>
+<!-- Tags Input -->
+<div class="bg-surface-container p-md rounded-xl border border-outline-variant shadow-sm flex flex-col gap-sm">
+<label class="text-label-sm font-label-sm text-primary uppercase tracking-wider">Tag (separati da virgola)</label>
+<div class="flex flex-wrap gap-xs mb-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm flex items-center gap-xs">Fisica <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span></span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm flex items-center gap-xs">Analisi II <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span></span>
+</div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Aggiungi tag..." type="text"/>
+</div>
+</div>
+<!-- Right Column: Category Selection -->
+<div class="md:col-span-5 flex flex-col gap-gutter">
+<div class="bg-surface-container p-md rounded-xl border border-outline-variant shadow-sm flex flex-col gap-sm">
+<label class="text-label-sm font-label-sm text-primary uppercase tracking-wider">Categoria</label>
+<div class="flex flex-col gap-base mt-2">
+<!-- Category Cards -->
+<button class="flex items-center gap-md p-sm rounded-lg border-2 border-primary bg-surface-container-highest text-left transition-all active:scale-95">
+<span class="material-symbols-outlined text-primary">school</span>
+<span class="text-body-md font-bold text-on-surface">Lezioni ordinarie</span>
+</button>
+<button class="flex items-center gap-md p-sm rounded-lg border border-outline-variant hover:bg-surface-container-high text-left transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">biotech</span>
+<span class="text-body-md text-on-surface-variant group-hover:text-on-surface">Argomenti da approfondire</span>
+</button>
+<button class="flex items-center gap-md p-sm rounded-lg border border-outline-variant hover:bg-surface-container-high text-left transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">notifications</span>
+<span class="text-body-md text-on-surface-variant group-hover:text-on-surface">Aggiornamenti utili</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Upload Progress Section -->
+<section class="flex flex-col gap-sm">
+<h3 class="font-title-md text-title-md text-on-surface">File in coda (2)</h3>
+<div class="flex flex-col gap-base">
+<!-- File Item 1 (Uploading) -->
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">description</span>
+<span class="text-body-md font-medium">appunti_fisica_vol1.pdf</span>
+</div>
+<span class="text-label-sm font-code-mono text-primary">75%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="h-full indigo-gradient w-[75%] transition-all duration-500 shadow-[0_0_8px_rgba(99,102,241,0.5)]"></div>
+</div>
+</div>
+<!-- File Item 2 (Pending) -->
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant flex justify-between items-center opacity-60">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined">image</span>
+<span class="text-body-md font-medium">diagramma_onde.jpg</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error transition-colors">cancel</span>
+</div>
+</div>
+</section>
+<!-- Action Button -->
+<section class="mt-4">
+<button class="w-full h-16 indigo-gradient rounded-xl shadow-lg flex items-center justify-center gap-md active:scale-95 transition-transform group">
+<span class="font-title-md text-title-md text-white font-bold">Conferma Caricamento</span>
+<span class="material-symbols-outlined text-white group-hover:translate-x-1 transition-transform">send</span>
+</button>
+<p class="text-center mt-md text-label-sm text-on-surface-variant">Caricando accetti i termini di servizio del network StudyNotes.</p>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-surface-container dark:bg-surface-container border-t border-outline-variant dark:border-outline-variant shadow-lg z-50 rounded-t-xl md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-label-sm text-label-sm">Focus</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- NavigationDrawer (Desktop Only) -->
+<aside class="hidden md:flex flex-col h-full w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-low border-r border-outline-variant dark:border-outline-variant shadow-md py-md z-40 pt-20">
+<div class="flex flex-col h-full">
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-md hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-title-md text-title-md">Home</span>
+</a>
+<a class="text-primary font-bold border-r-4 border-primary bg-surface-container-highest px-6 py-4 flex items-center gap-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-title-md text-title-md">Lessons</span>
+</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-md hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined">biotech</span>
+<span class="font-title-md text-title-md">Deep Dive</span>
+</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-md hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-title-md text-title-md">Updates</span>
+</a>
+</div>
+</aside>
+<script>
+        // Simple Interaction Logic
+        const dropZone = document.getElementById('drop-zone');
+        
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('bg-surface-container-highest');
+            dropZone.classList.add('border-primary');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('bg-surface-container-highest');
+            dropZone.classList.remove('border-primary');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('bg-surface-container-highest');
+            dropZone.classList.remove('border-primary');
+            alert('File ricevuti! Inizio elaborazione...');
+        });
+
+        // Category selection simulation
+        document.querySelectorAll('button[class*="border"]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Simplified toggle logic for demo
+                const isSelected = this.classList.contains('border-primary');
+                if(!isSelected) {
+                    // Logic to clear other selections could go here
+                }
+            });
+        });
+    </script>
+</body></html>

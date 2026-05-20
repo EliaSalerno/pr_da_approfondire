@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #13131b;
+            color: #e4e1ed;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .vibrant-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        }
+        .card-inner-shadow {
+            box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#ffb783",
+                      "tertiary-fixed": "#ffdcc5",
+                      "secondary-container": "#6f00be",
+                      "surface-dim": "#13131b",
+                      "on-primary": "#1000a9",
+                      "primary-fixed": "#e1e0ff",
+                      "on-tertiary-fixed": "#301400",
+                      "on-primary-container": "#0d0096",
+                      "on-background": "#e4e1ed",
+                      "tertiary-fixed-dim": "#ffb783",
+                      "surface-container-highest": "#34343d",
+                      "secondary-fixed": "#f0dbff",
+                      "outline": "#908fa0",
+                      "on-tertiary": "#4f2500",
+                      "surface-container-high": "#292932",
+                      "error-container": "#93000a",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "surface-tint": "#c0c1ff",
+                      "error": "#ffb4ab",
+                      "primary-container": "#8083ff",
+                      "on-primary-fixed": "#07006c",
+                      "inverse-surface": "#e4e1ed",
+                      "surface-container-low": "#1b1b23",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "surface-container-lowest": "#0d0d15",
+                      "on-error": "#690005",
+                      "inverse-on-surface": "#303038",
+                      "surface": "#13131b",
+                      "outline-variant": "#464554",
+                      "on-secondary": "#490080",
+                      "primary": "#c0c1ff",
+                      "on-tertiary-container": "#452000",
+                      "tertiary-container": "#d97721",
+                      "on-tertiary-fixed-variant": "#703700",
+                      "on-surface-variant": "#c7c4d7",
+                      "on-secondary-fixed-variant": "#6900b3",
+                      "secondary": "#ddb7ff",
+                      "surface-bright": "#393841",
+                      "background": "#13131b",
+                      "on-surface": "#e4e1ed",
+                      "on-secondary-container": "#d6a9ff",
+                      "inverse-primary": "#494bd6",
+                      "surface-variant": "#34343d",
+                      "secondary-fixed-dim": "#ddb7ff",
+                      "on-secondary-fixed": "#2c0051",
+                      "on-error-container": "#ffdad6",
+                      "surface-container": "#1f1f27"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "lg": "40px",
+                      "xl": "64px",
+                      "gutter": "24px",
+                      "max-width-content": "1200px",
+                      "margin-mobile": "16px",
+                      "md": "24px",
+                      "xs": "4px",
+                      "sm": "12px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Inter"],
+                      "title-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "code-mono": ["JetBrains Mono"],
+                      "label-sm": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "code-mono": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md bg-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container dark:bg-surface-container border-b border-outline-variant shadow-sm flex items-center justify-between px-gutter h-16 w-full glass-effect">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-150 text-primary dark:text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-title-md text-title-md text-on-surface">Lezioni ordinarie</h1>
+</div>
+<button class="active:scale-95 duration-150 text-primary dark:text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-32 px-margin-mobile max-w-max-width-content mx-auto">
+<!-- Welcome/Filter Section -->
+<section class="mb-gutter">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">I tuoi appunti</h2>
+<span class="material-symbols-outlined text-outline">tune</span>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<span class="px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm whitespace-nowrap">Tutti</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap">Recenti</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap">Preferiti</span>
+</div>
+</section>
+<!-- Bento/List Layout -->
+<div class="grid grid-cols-1 gap-4">
+<!-- Card 1 -->
+<div class="group bg-surface-container-high border border-outline-variant rounded-xl p-4 active:scale-[0.98] transition-all duration-150 hover:bg-surface-bright shadow-sm card-inner-shadow">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg vibrant-gradient flex items-center justify-center shrink-0 shadow-lg">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">Metodologie di Ricerca</h3>
+<span class="material-symbols-outlined text-outline text-sm">more_vert</span>
+</div>
+<p class="text-on-surface-variant font-label-sm text-label-sm mt-1">Aggiornato 2 ore fa</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-0.5 rounded bg-tertiary-container/20 text-tertiary font-label-sm text-[11px] uppercase tracking-wider">Social Sciences</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-[11px] uppercase tracking-wider">PDF</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-high border border-outline-variant rounded-xl p-4 active:scale-[0.98] transition-all duration-150 hover:bg-surface-bright shadow-sm card-inner-shadow">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest border border-outline-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">Storia del Design</h3>
+<span class="material-symbols-outlined text-outline text-sm">more_vert</span>
+</div>
+<p class="text-on-surface-variant font-label-sm text-label-sm mt-1">Aggiornato 5 ore fa</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary-container/20 text-secondary font-label-sm text-[11px] uppercase tracking-wider">Arts</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-[11px] uppercase tracking-wider">Note</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Image/Visual Break Item -->
+<div class="relative h-40 rounded-xl overflow-hidden border border-outline-variant group shadow-lg">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="A moody, high-contrast dark academic study environment featuring an open classic leather-bound notebook and a vintage fountain pen on a dark wood desk. The lighting is soft and cinematic, highlighting the rich textures of the paper and wood. In the background, out-of-focus bookshelves create a sense of intellectual depth. The overall color palette is dominated by deep slates and charcoals with warm amber glows from a nearby desk lamp, fitting the scholarly and focused Nocturne theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGR7S2onTy8tsMsld1Oyp8pJMY6fmcOpmx7jmiB2bWeYKKqy7cozljd3WZKHIpADHQJ7Fi_9cXY-3jT7iUeVXqoQXBq4nBRLisV0UMPTjH5XmrBybkvPWTd1Gel7CK4n_qCPO2pwX5u8UPaBQHX6D5cIF2EoWf7RoWqfgruWM9YhbgGZnU2jHHbxOonvhvPAtttGCmdL2417exA58GGadnhBWnKa89GjOCtTYe9R1N8zyTUOzs47uo_JAjImh2owm_cZFTtBUmfA1m"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex flex-col justify-end p-4">
+<span class="font-label-sm text-label-sm text-tertiary mb-1">PROTIP</span>
+<h4 class="text-on-surface font-title-md text-title-md">Usa la scansione OCR</h4>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-high border border-outline-variant rounded-xl p-4 active:scale-[0.98] transition-all duration-150 hover:bg-surface-bright shadow-sm card-inner-shadow">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest border border-outline-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">Psicologia Cognitiva</h3>
+<span class="material-symbols-outlined text-outline text-sm">more_vert</span>
+</div>
+<p class="text-on-surface-variant font-label-sm text-label-sm mt-1">Aggiornato ieri</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-0.5 rounded bg-tertiary-container/20 text-tertiary font-label-sm text-[11px] uppercase tracking-wider">Health</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-[11px] uppercase tracking-wider">Summaries</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface-container-high border border-outline-variant rounded-xl p-4 active:scale-[0.98] transition-all duration-150 hover:bg-surface-bright shadow-sm card-inner-shadow">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest border border-outline-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">Analisi I - Integrali</h3>
+<span class="material-symbols-outlined text-outline text-sm">more_vert</span>
+</div>
+<p class="text-on-surface-variant font-label-sm text-label-sm mt-1">Aggiornato 3 giorni fa</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary-container/20 text-secondary font-label-sm text-[11px] uppercase tracking-wider">STEM</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-[11px] uppercase tracking-wider">Video</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-24 right-gutter w-14 h-14 rounded-2xl vibrant-gradient text-white flex items-center justify-center shadow-2xl z-50 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container dark:bg-surface-container border-t border-outline-variant shadow-lg flex justify-around items-center h-20 w-full pb-safe glass-effect">
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined">timer</span>
+<span class="font-label-sm text-label-sm">Focus</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</div>
+</nav>
+<script>
+        // Micro-interactions and subtle atmospheric effects
+        document.querySelectorAll('.active\\:scale-95').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.classList.add('scale-95');
+            });
+            el.addEventListener('mouseup', () => {
+                el.classList.remove('scale-95');
+            });
+        });
+
+        // Sticky header opacity change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('bg-opacity-90');
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('bg-opacity-90');
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

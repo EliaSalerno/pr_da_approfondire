@@ -1,0 +1,58 @@
+site_name: Approfondimenti Utili
+site_description: Raccolta di approfondimenti su argomenti di cultura, design e tecnologia
+site_url: https://elias-student.github.io/pr-da-approfondire/
+repo_url: https://github.com/elias-student/pr-da-approfondire
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: it
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.path
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: nocturne-scholastic
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Passa alla modalità chiara
+    - scheme: nocturne-scholastic-light
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Passa alla modalità scura
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+extra_css:
+  - assets/stylesheets/nocturne-scholastic.css
+
+nav:
+  - Home: index.md
+  - Goldrake: goldrake/report.md
+  - Stitch Note Categorizer Hub:
+      - Panoramica: stitch_note_categorizer_hub/index.md
+      - Design System: stitch_note_categorizer_hub/nocturne_scholastic.md
+      - Schermate: stitch_note_categorizer_hub/schermate.md

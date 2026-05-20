@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-card {
+            position: relative;
+            z-index: 1;
+        }
+        .glow-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(45deg, #6f00be, #8083ff, #c0c1ff);
+            z-index: -1;
+            border-radius: inherit;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+        .glow-card:hover::before {
+            opacity: 0.8;
+        }
+        .glass-elevation {
+            background: rgba(31, 31, 39, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(144, 143, 160, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e4e1ed",
+                        "surface-container-high": "#292932",
+                        "surface-container-highest": "#34343d",
+                        "surface-container-low": "#1b1b23",
+                        "primary": "#c0c1ff",
+                        "surface-bright": "#393841",
+                        "on-tertiary": "#4f2500",
+                        "background": "#13131b",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "on-surface-variant": "#c7c4d7",
+                        "secondary-fixed": "#f0dbff",
+                        "tertiary-container": "#d97721",
+                        "on-secondary-container": "#d6a9ff",
+                        "outline": "#908fa0",
+                        "on-tertiary-fixed": "#301400",
+                        "on-secondary-fixed": "#2c0051",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#13131b",
+                        "on-primary": "#1000a9",
+                        "on-secondary": "#490080",
+                        "surface-tint": "#c0c1ff",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#34343d",
+                        "secondary-container": "#6f00be",
+                        "inverse-primary": "#494bd6",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "inverse-on-surface": "#303038",
+                        "on-error": "#690005",
+                        "secondary": "#ddb7ff",
+                        "on-primary-container": "#0d0096",
+                        "error-container": "#93000a",
+                        "on-background": "#e4e1ed",
+                        "on-primary-fixed": "#07006c",
+                        "primary-container": "#8083ff",
+                        "on-tertiary-container": "#452000",
+                        "on-surface": "#e4e1ed",
+                        "tertiary-fixed": "#ffdcc5",
+                        "tertiary": "#ffb783",
+                        "outline-variant": "#464554",
+                        "surface": "#13131b",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-container": "#1f1f27",
+                        "surface-container-lowest": "#0d0d15"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "max-width-content": "1200px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "lg": "40px",
+                        "sm": "12px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "code-mono": ["JetBrains Mono"],
+                        "display-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "code-mono": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface-container/80 backdrop-blur-md border-b border-outline-variant sticky top-0 z-[100] flex items-center justify-between px-md py-sm">
+<div class="flex items-center gap-md">
+<button class="p-base text-primary hover:bg-surface-container-highest transition-colors active:scale-95 rounded-full" onclick="toggleDrawer()">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-title-md text-title-md text-primary tracking-tight">StudyNotes</h1>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-base text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-95 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<div class="h-9 w-9 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-outline/30">
+<img alt="Profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwK2QpIJio9t9ZkaOL9vNEqJJUdOecIVtJJmavQqXf3mBbhsRicLcJpr4QOT2EFaTImgHQ6MuckVU4q0xb-u2Y8sY5q74XECwmciF_gP9LCSif8O5wXwRNEjP2LrrnZvhFBRWji3qZFK_UAhHQsdvVFXHmuPLD9N8mvmZjEKH4BJdwNArAInt1Ccjylk_gnN4yoB_SGiXAvVZoZ7psperauL7CarXjZv2ArULLAnkxgKgijo-Dz6Ir9pMQtseQ4QFzaAnmgBpH72b0"/>
+</div>
+</div>
+</header>
+<main class="max-w-max-width-content mx-auto px-margin-mobile py-lg pb-32">
+<!-- Welcome Section -->
+<section class="mb-xl">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-xs">Bentornato, Scholar</h2>
+<p class="text-on-surface-variant font-body-lg opacity-80">Hai 4 nuovi aggiornamenti e 2 lezioni da revisionare.</p>
+</section>
+<!-- Bento Grid Categories -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-xl">
+<!-- Category: Lezioni ordinarie -->
+<div class="glow-card group relative overflow-hidden bg-surface-container-low rounded-xl p-lg transition-all cursor-pointer h-64 flex flex-col justify-between">
+<div class="z-10">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-sm block opacity-70">Lecture Notes</span>
+<h3 class="font-title-md text-title-md text-on-surface">Lezioni ordinarie</h3>
+</div>
+<div class="flex justify-between items-end z-10">
+<div class="p-sm bg-primary-container/30 text-primary rounded-lg border border-primary/20">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">12 Files</span>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[140px] text-primary" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+</div>
+<!-- Category: Argomenti da approfondire -->
+<div class="glow-card group relative overflow-hidden bg-surface-container-low rounded-xl p-lg transition-all cursor-pointer h-64 flex flex-col justify-between">
+<div class="z-10">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-sm block opacity-70">Deep Dive</span>
+<h3 class="font-title-md text-title-md text-on-surface">Argomenti da approfondire</h3>
+</div>
+<div class="flex justify-between items-end z-10">
+<div class="p-sm bg-secondary-container/30 text-secondary rounded-lg border border-secondary/20">
+<span class="material-symbols-outlined" data-icon="microscope">biotech</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5 Research Papers</span>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[140px] text-secondary" data-icon="biotech" style="font-variation-settings: 'FILL' 1;">biotech</span>
+</div>
+</div>
+<!-- Category: Aggiornamenti utili -->
+<div class="glow-card group relative overflow-hidden bg-surface-container-low rounded-xl p-lg transition-all cursor-pointer h-64 flex flex-col justify-between">
+<div class="z-10">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest mb-sm block opacity-70">Live Feed</span>
+<h3 class="font-title-md text-title-md text-on-surface">Aggiornamenti utili</h3>
+</div>
+<div class="flex justify-between items-end z-10">
+<div class="p-sm bg-tertiary-container/30 text-tertiary rounded-lg border border-tertiary/20">
+<span class="material-symbols-outlined" data-icon="new_releases">notifications_active</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 New Alerts</span>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[140px] text-tertiary" data-icon="notifications_active" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+</div>
+</div>
+</div>
+<!-- Recent Notes Section -->
+<section>
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-title-md text-title-md text-on-surface">Note Recenti</h2>
+<button class="text-primary font-label-sm text-label-sm hover:underline tracking-wide uppercase">Vedi tutte</button>
+</div>
+<div class="space-y-sm">
+<!-- Note Item 1 -->
+<div class="flex items-center gap-md p-md bg-surface-container-low border border-outline/10 rounded-xl hover:bg-surface-container transition-all group cursor-pointer glass-elevation">
+<div class="h-12 w-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-outline/20">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md text-on-surface font-semibold">Metodologie di Ricerca Avanzate</h4>
+<p class="text-[13px] text-on-surface-variant opacity-70">Aggiornato 2 ore fa • Lab Report</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Note Item 2 -->
+<div class="flex items-center gap-md p-md bg-surface-container-low border border-outline/10 rounded-xl hover:bg-surface-container transition-all group cursor-pointer glass-elevation">
+<div class="h-12 w-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-outline/20">
+<span class="material-symbols-outlined text-secondary" data-icon="article">article</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md text-on-surface font-semibold">Analisi Statistica del Campione B</h4>
+<p class="text-[13px] text-on-surface-variant opacity-70">Aggiornato ieri • Research</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Note Item 3 -->
+<div class="flex items-center gap-md p-md bg-surface-container-low border border-outline/10 rounded-xl hover:bg-surface-container transition-all group cursor-pointer glass-elevation">
+<div class="h-12 w-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-outline/20">
+<span class="material-symbols-outlined text-tertiary" data-icon="edit_note">edit_note</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md text-on-surface font-semibold">Appunti: Filosofia della Scienza</h4>
+<p class="text-[13px] text-on-surface-variant opacity-70">Aggiornato 3 giorni fa • Lecture</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 h-16 w-16 bg-primary text-on-primary rounded-full shadow-[0_8px_32px_rgba(192,193,255,0.3)] hover:scale-110 active:scale-95 transition-all flex items-center justify-center z-[70]">
+<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-[100] flex justify-around items-center h-16 bg-surface-container/90 backdrop-blur-lg border-t border-outline/10 px-margin-mobile">
+<a class="flex flex-col items-center justify-center text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-[11px] font-bold mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-sm text-[11px] mt-1">Lezioni</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span class="font-label-sm text-[11px] mt-1">Deep Dive</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="update">notifications</span>
+<span class="font-label-sm text-[11px] mt-1">Updates</span>
+</a>
+</nav>
+<!-- Drawer Navigation (Common pattern) -->
+<aside class="fixed inset-y-0 left-0 w-80 bg-surface-container-low z-[150] shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out border-r border-outline/10" id="drawer">
+<div class="p-lg flex flex-col h-full">
+<div class="flex items-center justify-between mb-xl">
+<div class="flex items-center gap-md">
+<div class="h-10 w-10 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div>
+<h3 class="font-title-md text-on-surface">Academic Scholar</h3>
+<p class="text-[13px] text-on-surface-variant opacity-70">Research Methods</p>
+</div>
+</div>
+<button class="p-base hover:bg-surface-container-highest rounded-full" onclick="toggleDrawer()">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<nav class="flex-1 space-y-sm">
+<a class="flex items-center gap-md px-md py-3 rounded-xl bg-primary/10 text-primary font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Lezioni ordinarie</span>
+</a>
+<a class="flex items-center gap-md px-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span>Argomenti da approfondire</span>
+</a>
+<a class="flex items-center gap-md px-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span>Aggiornamenti utili</span>
+</a>
+</nav>
+<div class="mt-auto pt-lg border-t border-outline/10">
+<div class="p-md bg-surface-container-highest rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-on-surface font-label-sm">Premium Account</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Overlay -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[140] hidden opacity-0 transition-opacity duration-300" id="overlay" onclick="toggleDrawer()"></div>
+<script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('drawer');
+            const overlay = document.getElementById('overlay');
+            
+            if (drawer.classList.contains('-translate-x-full')) {
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.add('opacity-100');
+                }, 10);
+            } else {
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.remove('opacity-100');
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        // Simple interactive feedback for cards
+        document.querySelectorAll('.glow-card, .glass-elevation').forEach(card => {
+            card.addEventListener('mousedown', () => card.style.transform = 'scale(0.98)');
+            card.addEventListener('mouseup', () => card.style.transform = 'scale(1)');
+            card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
+        });
+    </script>
+</body></html>
