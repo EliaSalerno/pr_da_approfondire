@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Upload Notes - StudyNotes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0f172a; /* Base Level 0 */
+            color: #e4e1ed;
+        }
+        .nocturne-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid #334155;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .upload-dashed-border {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23475569' stroke-width='3' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #13131b;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-primary-fixed-variant": "#2f2ebe",
+                "surface-container-high": "#292932",
+                "inverse-on-surface": "#303038",
+                "on-error-container": "#ffdad6",
+                "inverse-surface": "#e4e1ed",
+                "tertiary-fixed-dim": "#ffb783",
+                "on-background": "#e4e1ed",
+                "on-secondary-fixed-variant": "#6900b3",
+                "surface-tint": "#c0c1ff",
+                "on-tertiary-fixed": "#301400",
+                "error-container": "#93000a",
+                "tertiary-fixed": "#ffdcc5",
+                "on-primary": "#1000a9",
+                "on-error": "#690005",
+                "inverse-primary": "#494bd6",
+                "on-tertiary": "#4f2500",
+                "on-secondary-container": "#d6a9ff",
+                "secondary": "#ddb7ff",
+                "outline-variant": "#464554",
+                "surface-bright": "#393841",
+                "on-secondary-fixed": "#2c0051",
+                "on-tertiary-fixed-variant": "#703700",
+                "surface-container-highest": "#34343d",
+                "surface-container-low": "#1b1b23",
+                "background": "#13131b",
+                "tertiary": "#ffb783",
+                "primary": "#c0c1ff",
+                "on-secondary": "#490080",
+                "surface": "#13131b",
+                "secondary-fixed-dim": "#ddb7ff",
+                "on-primary-fixed": "#07006c",
+                "error": "#ffb4ab",
+                "surface-variant": "#34343d",
+                "surface-container-lowest": "#0d0d15",
+                "surface-container": "#1f1f27",
+                "tertiary-container": "#d97721",
+                "on-surface-variant": "#c7c4d7",
+                "primary-fixed": "#e1e0ff",
+                "on-tertiary-container": "#452000",
+                "secondary-container": "#6f00be",
+                "on-surface": "#e4e1ed",
+                "secondary-fixed": "#f0dbff",
+                "surface-dim": "#13131b",
+                "primary-container": "#8083ff",
+                "outline": "#908fa0",
+                "primary-fixed-dim": "#c0c1ff",
+                "on-primary-container": "#0d0096"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "xs": "4px",
+                "md": "24px",
+                "sm": "12px",
+                "gutter": "24px",
+                "lg": "40px",
+                "base": "8px",
+                "max-width-content": "1200px",
+                "margin-mobile": "16px",
+                "xl": "64px"
+              },
+              "fontFamily": {
+                "label-sm": ["Inter"],
+                "headline-lg": ["Inter"],
+                "display-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "code-mono": ["JetBrains Mono"],
+                "body-lg": ["Inter"],
+                "title-md": ["Inter"]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-surface-dim font-body-md text-on-surface">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container border-r border-outline-variant shadow-sm flex flex-col p-gutter z-50">
+<div class="mb-lg">
+<h1 class="font-title-md text-title-md font-bold text-primary">StudyNotes</h1>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Academic Ledger</p>
+</div>
+<nav class="flex-grow flex flex-col gap-base">
+<a class="flex items-center gap-sm p-sm rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-body-md">Home</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-body-md">Lessons</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-body-md">Deep Dive</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-body-md">Updates</span>
+</a>
+</nav>
+<div class="mt-auto pt-gutter border-t border-outline-variant">
+<button class="w-full nocturne-gradient text-white font-bold py-sm px-md rounded-xl transition-all active:scale-95 shadow-lg shadow-primary/20">
+                Upload Notes
+            </button>
+</div>
+</aside>
+<!-- TopNavBar Anchor -->
+<header class="fixed top-0 right-0 left-64 h-20 bg-surface border-b border-outline-variant shadow-sm flex items-center justify-between px-gutter z-40">
+<div class="flex items-center bg-surface-container-low rounded-full px-md py-xs border border-outline-variant focus-within:ring-2 focus-within:ring-primary/30 transition-all w-96">
+<span class="material-symbols-outlined text-on-surface-variant mr-xs">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full font-body-md" placeholder="Search your ledger..." type="text"/>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-xs rounded-full transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-xs rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold border border-outline-variant">
+                JD
+            </div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pl-64 pt-20 h-screen overflow-hidden flex flex-col">
+<div class="flex-grow p-gutter flex gap-gutter max-w-max-width-content mx-auto w-full">
+<!-- Left Column: Upload Zones & Queue -->
+<div class="flex-grow flex flex-col gap-gutter min-w-0">
+<!-- Header -->
+<div class="mb-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Deposit Academic Material</h2>
+<p class="text-on-surface-variant font-body-md">Your contribution expands the collective ledger. Select or drag files to begin.</p>
+</div>
+<!-- Drag & Drop Zone -->
+<div class="relative group cursor-pointer h-80 rounded-xl overflow-hidden upload-dashed-border flex flex-col items-center justify-center transition-all hover:bg-surface-container-low">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="z-10 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-md group-hover:scale-110 transition-transform shadow-xl">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">upload_file</span>
+</div>
+<p class="font-title-md text-title-md text-on-surface mb-xs">Drop notes here or <span class="text-primary font-bold">browse</span></p>
+<p class="text-on-surface-variant font-label-sm">Supports PDF, Markdown, LaTeX, and Word (Max 50MB)</p>
+</div>
+</div>
+<!-- Queue List -->
+<div class="flex-grow glass-card rounded-xl p-md flex flex-col overflow-hidden">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-title-md text-title-md text-on-surface">Queue <span class="text-on-surface-variant text-body-md font-normal ml-xs">(3 files)</span></h3>
+<button class="text-primary font-label-sm hover:underline">Clear all</button>
+</div>
+<div class="flex-grow overflow-y-auto custom-scrollbar pr-xs">
+<!-- Queue Item 1 -->
+<div class="flex items-center gap-md p-sm rounded-lg bg-surface-container-lowest border border-outline-variant mb-sm group hover:border-outline transition-colors">
+<div class="p-xs bg-error-container/20 rounded-lg">
+<span class="material-symbols-outlined text-error">picture_as_pdf</span>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-end mb-xs">
+<span class="font-body-md text-on-surface truncate">Advanced_Quantum_Mechanics_Lec4.pdf</span>
+<span class="text-on-surface-variant text-label-sm">4.2 MB</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="nocturne-gradient h-full w-[100%]"></div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-xs rounded-full">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<!-- Queue Item 2 -->
+<div class="flex items-center gap-md p-sm rounded-lg bg-surface-container-lowest border border-outline-variant mb-sm group hover:border-outline transition-colors">
+<div class="p-xs bg-primary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-end mb-xs">
+<span class="font-body-md text-on-surface truncate">Philosophy_of_Science_Summary.md</span>
+<span class="text-on-surface-variant text-label-sm">128 KB</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="nocturne-gradient h-full w-[45%]"></div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-xs rounded-full">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<!-- Queue Item 3 -->
+<div class="flex items-center gap-md p-sm rounded-lg bg-surface-container-lowest border border-outline-variant mb-sm group hover:border-outline transition-colors opacity-60">
+<div class="p-xs bg-tertiary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-tertiary">image</span>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-end mb-xs">
+<span class="font-body-md text-on-surface truncate">Blackboard_Capture_Oct12.jpg</span>
+<span class="text-on-surface-variant text-label-sm">8.1 MB</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-outline-variant h-full w-0"></div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-xs rounded-full">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Metadata Form -->
+<aside class="w-96 flex flex-col gap-gutter shrink-0">
+<div class="glass-card rounded-xl p-md flex flex-col gap-md sticky top-0">
+<h3 class="font-title-md text-title-md text-on-surface border-b border-outline-variant pb-sm">Note Details</h3>
+<!-- Title Input -->
+<div class="flex flex-col gap-xs">
+<label class="text-label-sm text-on-surface-variant uppercase tracking-wider">Note Title</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-sm text-on-surface focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all" placeholder="e.g. Molecular Biology Week 3" type="text"/>
+</div>
+<!-- Category Select -->
+<div class="flex flex-col gap-xs">
+<label class="text-label-sm text-on-surface-variant uppercase tracking-wider">Category</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant rounded-lg p-sm text-on-surface focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all pr-10">
+<option value="lezioni">Lezioni ordinarie</option>
+<option value="approfondimento">Argomenti da approfondire</option>
+<option value="aggiornamenti">Aggiornamenti utili</option>
+</select>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Tags Input -->
+<div class="flex flex-col gap-xs">
+<label class="text-label-sm text-on-surface-variant uppercase tracking-wider">Tags</label>
+<div class="flex flex-wrap gap-xs mb-xs">
+<span class="bg-primary/20 text-primary text-label-sm px-sm py-1 rounded-full flex items-center gap-1 border border-primary/30">
+                                Physics <span class="material-symbols-outlined text-xs cursor-pointer">close</span>
+</span>
+<span class="bg-secondary/20 text-secondary text-label-sm px-sm py-1 rounded-full flex items-center gap-1 border border-secondary/30">
+                                Quantum <span class="material-symbols-outlined text-xs cursor-pointer">close</span>
+</span>
+</div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-sm text-on-surface focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all" placeholder="Add tag..." type="text"/>
+</div>
+<!-- Preview Card (Visual Flare) -->
+<div class="mt-sm p-sm rounded-lg bg-surface-container-high border border-outline-variant/30 flex items-center gap-sm">
+<div class="h-12 w-12 rounded bg-surface-container flex items-center justify-center overflow-hidden">
+<img alt="Ledger Cover" class="h-full w-full object-cover" data-alt="A dark and moody academic cover for a digital note ledger. The design features minimalist geometric shapes in deep indigo and violet gradients on a charcoal black background. The atmosphere is intellectual, quiet, and sophisticated, mimicking a high-end leather-bound textbook's abstract digital representation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOKm4ft1vVsNa8xJel0U6roEO-zyFQtL6hNOdbMtzdDOTj85MrLG-UiLTbfkk422fw-YQzqxaWc_laK9FOBImXsG_uFh-mAC1OVpo3BvAXqM8hKfybZBN7fLUhQNY2Sp2dnHd1guKEtx22nA1Jt4hYWeEwJkW9PGgQJtQQppTGgnINMYfROAIil3jGe1_EQ5EHaIsKELvezQeqD1FWYGxyzFW3Yl51SzFGPznaFCJcqRRYEchRIKCkqjp4ZmnWjjY36H1jtzwjU3Hn"/>
+</div>
+<div class="flex-grow">
+<p class="text-label-sm text-primary font-bold">Ledger Preview</p>
+<p class="text-[11px] text-on-surface-variant">Metadata will be indexed automatically.</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-sm mt-md">
+<button class="w-full nocturne-gradient text-white font-bold py-md rounded-xl transition-all active:scale-95 shadow-lg shadow-primary/20 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">cloud_upload</span>
+                            Commit to Ledger
+                        </button>
+<button class="w-full bg-transparent border border-outline-variant text-on-surface-variant font-medium py-md rounded-xl hover:bg-surface-container-high transition-colors active:scale-95">
+                            Cancel Upload
+                        </button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<script>
+        // Micro-interaction for drag and drop visual feedback
+        const dropZone = document.querySelector('.upload-dashed-border');
+        
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('bg-primary/10', 'border-primary');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('bg-primary/10', 'border-primary');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('bg-primary/10', 'border-primary');
+            // Logic to handle files would go here
+        });
+
+        // Atmospheric effect: Subtle particle movement in the gradient could be added here
+        // but keeping it lean for core UI focus.
+    </script>
+</body></html>
