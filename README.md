@@ -2,7 +2,7 @@
 
 Raccolta di approfondimenti su cultura, design e tecnologia.
 
-🌐 **Sito**: https://eliasalerno.github.io/pr-da-approfondire/
+🌐 **Sito**: https://EliaSalerno.github.io/pr_da_approfondire/
 
 Aggiungi un nuovo argomento:
 1. Crea `docs/mio-topic/index.md`
