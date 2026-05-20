@@ -29,19 +29,19 @@ A distanza di anni, sociologi e critici hanno evidenziato come gli adulti dell'e
 
 Mentre i genitori temevano la nascita di una generazione violenta, per i bambini dell'epoca Actarus divenne un punto di riferimento etico, un difensore della giustizia e della natura che, pur soffrendo, sceglieva di fare la cosa giusta.
 
-Ecco un documento in formato Markdown che raccoglie la sitografia, le fonti e i riferimenti storici ed editoriali utilizzati per ricostruire l'impatto di Goldrake nelle famiglie italiane nel 1978.
+Ecco un documento che raccoglie la sitografia, le fonti e i riferimenti storici ed editoriali utilizzati per ricostruire l'impatto di Goldrake nelle famiglie italiane nel 1978.
 
-```md
+
 # Sitografia e Fonti di Riferimento: L'Impatto di Goldrake in Italia (4 Aprile 1978)
 
 Il resoconto storico, sociologico e di costume relativo al debutto di *Atlas UFO Robot (Goldrake)* sui canali Rai e alla conseguente reazione generazionale all'interno delle famiglie italiane è stato strutturato attingendo alle seguenti fonti documentali, archivistiche e giornalistiche.
 
 ---
 
-## 1. Enciclopedie e Contesto Editoriale
-* **Wikipedia Italia – UFO Robot Goldrake** *Consultato per la verifica delle date di messa in onda (4 aprile 1978 su Rete 2), l'introduzione di Maria Giovanna Elmi, i dati di vendita dei supporti fonografici (il successo del vinile della sigla degli Actarus) e i dettagli sulla produzione di Gō Nagai.* * [Link alla voce di Wikipedia](https://it.wikipedia.org/wiki/UFO_Robot_Goldrake)
+1. Enciclopedie e Contesto Editoriale
+**Wikipedia Italia – UFO Robot Goldrake** *Consultato per la verifica delle date di messa in onda (4 aprile 1978 su Rete 2), l'introduzione di Maria Giovanna Elmi, i dati di vendita dei supporti fonografici (il successo del vinile della sigla degli Actarus) e i dettagli sulla produzione di Gō Nagai.* * [Link alla voce di Wikipedia](https://it.wikipedia.org/wiki/UFO_Robot_Goldrake)
 
-## 2. Analisi Giornalistiche e Anniversari Storici
+2. Analisi Giornalistiche e Anniversari Storici
 * **Il Giornale – "Goldrake compie 45 anni: oggi nel 1978 il primo episodio italiano" (Roberta Damiata, 2023)** *Fonte per i dati di ascolto stimati (circa 5 milioni di telespettatori quotidiani nel focus della fascia protetta), il ruolo fondamentale dei funzionari Rai Nicoletta Artom e Massimo Fichera nell'importazione della serie, e la descrizione del boom del merchandising che travolse le tasche dei genitori dell'epoca.* * [Leggi l'articolo su IlGiornale.it](https://www.ilgiornale.it/news/tv/goldrake-compie-45-anni-primo-episodio-italiano-nel-78-2134578.html)
 * **Sky TG24 – "Goldrake, il robot più amato dagli italiani, compie 40 anni" (2018)** *Utilizzato per approfondire il focus sociologico sul dibattito acceso tra psicologi, insegnanti e associazioni di genitori, preoccupati per la presunta carica eversiva e violenta dei primi anime robotici inseriti nei palinsesti radiotelevisivi di Stato.* * [Leggi l'articolo su Sky TG24](https://tg24.sky.it/spettacolo/2018/04/04/goldrake-40-anni-italia)
 * **Quotidiano Libertà – "'Goldrake avanti!', quel 4 aprile 1978 fu tele-rivoluzione" (2025)** *Riferimento sul mutamento del linguaggio televisivo per ragazzi e sull'origine dell'adattamento italiano (tra cui la genesi del nome "Atlas").* * [Leggi l'articolo su Liberta.it](https://liberta.it/news/lifestyle/cinema-e-spettacolo/cinepop/goldrake-avanti-quel-4-aprile-1978-fu-tele-rivoluzione/93890)
@@ -54,5 +54,3 @@ Il resoconto storico, sociologico e di costume relativo al debutto di *Atlas UFO
 
 ## 5. Approfondimenti di Cultura Pop e Costume
 * **NerdBurger.it – "Goldrake: il 4 aprile 1978 andava in onda la prima puntata italiana!" (2018)** *Consultato per inquadrare il contrasto tra i ritmi narrativi tradizionali della TV dei ragazzi pre-1978 (Heidi, Carosello, i burattini) e la rottura transmediale introdotta dalle "lame rotanti" e dal "maglio perforante".* * [Leggi l'articolo su NerdBurger.it](https://www.nerdburger.it/goldrake-40-anni/)
-
-```
