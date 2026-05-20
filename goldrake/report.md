@@ -29,9 +29,6 @@ A distanza di anni, sociologi e critici hanno evidenziato come gli adulti dell'e
 
 Mentre i genitori temevano la nascita di una generazione violenta, per i bambini dell'epoca Actarus divenne un punto di riferimento etico, un difensore della giustizia e della natura che, pur soffrendo, sceglieva di fare la cosa giusta.
 
-Ecco un documento che raccoglie la sitografia, le fonti e i riferimenti storici ed editoriali utilizzati per ricostruire l'impatto di Goldrake nelle famiglie italiane nel 1978.
-
-
 # Sitografia e Fonti di Riferimento: L'Impatto di Goldrake in Italia (4 Aprile 1978)
 
 Il resoconto storico, sociologico e di costume relativo al debutto di *Atlas UFO Robot (Goldrake)* sui canali Rai e alla conseguente reazione generazionale all'interno delle famiglie italiane è stato strutturato attingendo alle seguenti fonti documentali, archivistiche e giornalistiche.
